@@ -1,0 +1,629 @@
+doctype html
+html(lang="en")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    meta(http-equiv="Content-Style-Type" content="text/css")
+    title= this
+    link(rel="stylesheet" type="text/css" href="common/css/import.css" media="all")
+    link(href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css')
+  body
+    #background-wapper
+      img#main-background(src="common/img/sky-background.jpg" alt="")
+      img#beach-background(src="common/img/beach-background.jpg" alt="")
+    #wrapper
+      .fish-area
+      .div.plane-fly-01.fly-animation
+        img.flag-plane.fly-skew-animation(src="common/img/flag-plane.png" alt="")
+        img.machine-plane.fly-skew-animation(src="common/img/plane-01.png" alt="")
+      form#login-form.disable.nail-broad
+        .animation
+          .nail-thick
+          .form-title
+            span Đăng nhập
+            sub
+              a.register-acc(href="#" target="_blank") Đăng ký
+          label(for="username") Tài khoản
+          input#username(type="text" placeholder="Tên tài khoản")
+          label(for="password") Mật khẩu
+          input#password(type="password")
+          .function-form
+            a#back-btn(href="javascript:void(0)" title="Trở lại")
+            p#message-login Sai mật khẩu
+            input#next-btn(type="submit" value="" title="Đăng nhập")
+          img.broad-background(src="common/img/broad-login.png" alt="")
+      #user-infomation.disable.nail-broad
+        .animation
+          .nail-thick
+          .form-title
+            span BOM
+            sub
+              a.logout-acc(href="#" target="_blank") Đăng xuất
+          p.label(data-userpoint="5") Số điểm hiện tại của bạn là
+          nav.nav-direction
+            a(href="#wheel-play") Vòng quay
+            a(href="#wheel-law") Thể lệ
+            a(href="#wheel-result") Kết quả
+          .function-form
+            a#back-btn(href="javascript:void(0)" title="Trở lại")
+            //- p#message-login
+            //- a#next-btn(href="javascript:void(0)" title="Đăng nhập")
+          img.broad-background(src="common/img/broad-login.png" alt="")
+      #wheel-play
+        .header
+          .content-inner
+            .leaf-header
+              .leaf-01
+                  img(src="common/img/img-leaf-01.png" alt="")
+                  img.flower-leaf(src="common/img/flower-11.png" alt="")
+              .leaf-02
+                  img(src="common/img/img-leaf-02.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+              .leaf-03
+                  img(src="common/img/img-leaf-03.png" alt="")
+                  img.flower-leaf(src="common/img/flower-13.png" alt="")
+              .leaf-04
+                  img(src="common/img/img-leaf-04.png" alt="")
+                  img.flower-leaf(src="common/img/flower-14.png" alt="")
+              .leaf-05
+                  img(src="common/img/img-leaf-05.png" alt="")
+                  img.flower-leaf(src="common/img/flower-15.png" alt="")
+              .leaf-06
+                  img(src="common/img/img-leaf-06.png" alt="")
+                  img.flower-leaf(src="common/img/flower-16.png" alt="")
+              .leaf-07
+                  img(src="common/img/img-leaf-07.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+
+            .broad-name(data-broad-name="Vòng quay")
+              .nail-thick
+              img(src="common/img/header-broad.png" alt="Broad-name")
+        .contents
+          .content-inner
+            .content-wrapper
+              .obj-wheel
+                img#wheel-surfing(src="common/img/surfing.png" alt="")
+                img#wheel-pointer(src="common/img/red-pointer.png" alt="")
+                img#wheel-nail(src="common/img/wheel-nail.png" alt="")
+                .wheel-content.disable
+                  #metal-wheel-center-large
+                  #metal-wheel-center
+                  #metal-wheel
+                  #rotate-wheel
+                    //- .auto-wheel
+                    //- img#wheel-circle(src="common/img/wheel-circles.png" alt="")
+                    .points-list
+                      //-
+                      ul
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-01.png" alt="")
+                          img.wheel-flower(src="common/img/flower-01.png" alt="")
+                          //- span 1
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-02.png" alt="")
+                          img.wheel-flower(src="common/img/flower-02.png" alt="")
+                          //- span 2
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-04.png" alt="")
+                          img.wheel-flower(src="common/img/flower-03.png" alt="")
+                          //- span 3
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-02.png" alt="")
+                          img.wheel-flower(src="common/img/flower-04.png" alt="")
+                          //- span 4
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-01.png" alt="")
+                          img.wheel-flower(src="common/img/flower-05.png" alt="")
+                          //- span 5
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-02.png" alt="")
+                          img.wheel-flower(src="common/img/flower-06.png" alt="")
+                          //- span 6
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-01.png" alt="")
+                          img.wheel-flower(src="common/img/flower-07.png" alt="")
+                          //- span 7
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-02.png" alt="")
+                          img.wheel-flower(src="common/img/flower-08.png" alt="")
+                          //- span 8
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-04.png" alt="")
+                          img.wheel-flower(src="common/img/flower-09.png" alt="")
+                          //- span 9
+                        li
+                          img.wheel-circle(src="common/img/wheel-circles-02.png" alt="")
+                          img.wheel-flower(src="common/img/flower-10.png" alt="")
+                          //- span 10
+                img#wheel-legs(src="common/img/wheel-legs.png" alt="")
+                img#wood-connection(src="common/img/wood-conection.png" alt="")
+              .obj-broad
+                #user_info
+                  img(src="common/img/user-info.png" alt="")
+                  //- a.user_login(href="#") Đăng nhập
+
+                  a.content_user(data-username="BOM" data-userpoint="5" href="javascript:void(0)") Bom
+
+                #broad-content
+                  img(src="common/img/broad-info.png" alt="")
+                  p.broad-paper
+                    |Lượt chơi hiện tại đã hết rồi.
+                    br
+                    |Vui lòng thử lại vào hôm sau nhé!
+                    span.point-result(data-desc-intro="Vui lòng nhấn vào vòng quay để bắt đầu" data-desc-result="Xin chúc mừng, số điểm của bạn là: ") Vòng quay may mắn
+                img#broad-legs(src="common/img/broad-legs.png" alt="")
+                .wiget_3
+              .obj-direction.right
+                img.direction-leg(src='common/img/direction-leg.png' alt='')
+                ul
+                  li
+                    a(href="#wheel-law")
+                      img(src='common/img/direction-broad-01.png' alt='')
+                      p Thể lệ
+                  li
+                    a(href="#wheel-result")
+                      img(src='common/img/direction-broad-02.png' alt='')
+                      p Kết quả
+
+            .sand-floor
+              .wiget_1
+
+      #wheel-law
+        .header
+          .leaf-header
+              .leaf-01
+                  img(src="common/img/img-leaf-01.png" alt="")
+                  img.flower-leaf(src="common/img/flower-11.png" alt="")
+              .leaf-02
+                  img(src="common/img/img-leaf-02.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+              .leaf-03
+                  img(src="common/img/img-leaf-03.png" alt="")
+                  img.flower-leaf(src="common/img/flower-13.png" alt="")
+              .leaf-04
+                  img(src="common/img/img-leaf-04.png" alt="")
+                  img.flower-leaf(src="common/img/flower-14.png" alt="")
+              .leaf-05
+                  img(src="common/img/img-leaf-05.png" alt="")
+                  img.flower-leaf(src="common/img/flower-15.png" alt="")
+              .leaf-06
+                  img(src="common/img/img-leaf-06.png" alt="")
+                  img.flower-leaf(src="common/img/flower-16.png" alt="")
+              .leaf-07
+                  img(src="common/img/img-leaf-07.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+          .content-inner
+            .broad-name(data-broad-name="Thể lệ")
+              .nail-thick
+              img(src="common/img/header-broad.png" alt="Broad-name")
+        .contents
+          .content-inner
+            .content-wrapper
+              .obj-large-broad
+                .wheel-broad-large
+                  p.broad-title Vòng quay may mắn -  Biển Trong Lành
+                  .broad-content
+                    p
+                      |Bạn  biết đấy, những ngày qua, khi người dân cả nước đang hướng về miền Trung thân yêu sau những biến cố lớn liên quan đến việc môi trường biển bị ô nhiễm. Chưa bao giờ lời kêu gọi bảo vệ môi trường đặc biệt là môi trường biển lại tha thiết và cấp bách như bây giờ. Hòa cùng không khí ấy, với tinh thần: <strong>Hành động nhỏ ý nghĩa lớn - Vì một cuộc sống tốt đẹp hơn</strong>. Vinaresearch tổ chức chương trình Vòng quay may mắn lần 5 với chủ đề Biển Trong Lành. Hãy tham gia và cùng nhau chia sẻ thông điệp của chương trình đến mọi người bằng cách áp dụng thông điệp vào cuộc sống hàng ngày của bạn và khuyến khích những  người bạn quen biết cùng nhau thực hiện thông điệp
+                      strong "Vì một môi trường biển trong lành"
+                      br
+                      strong Thời gian: 
+                      br
+                      |- Chương trình bắt đầu từ 9h ngày 15/06/2016 đến 23h59' ngày 30/06/2016
+                      br
+                      strong Cách thức tham gia:
+                    p - Đăng nhập vào Vinaresearch để tham gia chương trình.
+                    p
+                      strong Thể lệ: 
+                      br
+                      |- Mỗi ngày, mỗi thành viên sẽ đuợc tặng một lượt quay may mắn sau khi đăng nhập tại website Vinaresearch.net.
+                      br
+                      |- Khi Vòng quay may mắn khởi động, thành viên sẽ nhận được số điểm thưởng tương ứng trên vòng quay. 
+                      br
+                      |- Số điểm lớn nhất của Vòng quay may mắn là <strong>cá vàng</strong> tương ứng với 200 điểm thưởng.
+                      br
+                      strong Lưu ý: 
+                      br
+                      |Mỗi ngày chương trình chỉ tặng tối đa 6,666 phần quà (tương ứng các mức điểm thưởng khác nhau). Nếu trong trường hợp số quà đã chạm ngưỡng cho phép thì vòng quay sẽ không quay được nữa và sẽ được khởi động lại vào 9h00 ngày hôm sau. 
+                      br
+                      strong Điều kiện dự thi: 
+                      br
+                      |- Là thành viên của cộng đồng khảo sát trực tuyến Vinaresearch
+                      br
+                      |- Chủ tài khoản là người thật, không vi phạm bất kỳ quy định nào trên cộng đồng khảo sát trực tuyến Vinaresearch.
+                      br
+                      strong Quy định: 
+                      br
+                      |- Thành viên không được sử dụng phần mềm để gây rối, điều chỉnh kết quả của Vòng quay may mắn. Nếu vi phạm quy định này và bị phát hiện, thành viên sẽ bị khóa tài khoản vĩnh viễn tại Vinaresearch.
+                      br
+                      |- Trong một ngày, mỗi thành viên chỉ có tối đa 1 lượt quay. Trong truờng hợp có lỗi kĩ thuật và thành viên có thể quay đuợc vào lần thứ 2, kết quả lần này sẽ không đuợc tính.
+                      br
+                      |- Trong mọi truờng hợp tranh chấp về luật chơi này, BQT Vinaresearch là người có quyết định cuối cùng.
+                    p
+                      b Mọi thắc mắc xin liên hệ bộ phận hỗ trợ (Hotline: 083 848 3732) hoặc hộp thư: support@vinaresearch.net
+                    p.align_r
+                      br
+                      strong Thân ái!
+                      br
+                      strong Ban Quản trị Vinaresearch
+                .wiget_2
+                .wiget_4
+              .obj-direction.right
+                img.direction-leg(src='common/img/direction-leg.png' alt='')
+                ul
+                  li
+                    a(href="#wheel-result")
+                      img(src='common/img/direction-broad-02.png' alt='')
+                      p Kết quả
+              .obj-direction.left
+                img.direction-leg(src='common/img/direction-leg.png' alt='')
+                ul
+                  li
+                    a(href="#wheel-play")
+                      img(src='common/img/direction-broad-03.png' alt='')
+                      p Vòng quay
+            .sand-floor
+
+      #wheel-result
+        .header
+          .leaf-header
+              .leaf-01
+                  img(src="common/img/img-leaf-01.png" alt="")
+                  img.flower-leaf(src="common/img/flower-11.png" alt="")
+              .leaf-02
+                  img(src="common/img/img-leaf-02.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+              .leaf-03
+                  img(src="common/img/img-leaf-03.png" alt="")
+                  img.flower-leaf(src="common/img/flower-13.png" alt="")
+              .leaf-04
+                  img(src="common/img/img-leaf-04.png" alt="")
+                  img.flower-leaf(src="common/img/flower-14.png" alt="")
+              .leaf-05
+                  img(src="common/img/img-leaf-05.png" alt="")
+                  img.flower-leaf(src="common/img/flower-15.png" alt="")
+              .leaf-06
+                  img(src="common/img/img-leaf-06.png" alt="")
+                  img.flower-leaf(src="common/img/flower-16.png" alt="")
+              .leaf-07
+                  img(src="common/img/img-leaf-07.png" alt="")
+                  img.flower-leaf(src="common/img/flower-12.png" alt="")
+          .content-inner
+            .broad-name(data-broad-name="Kết quả")
+              .nail-thick
+              img(src="common/img/header-broad.png" alt="Broad-name")
+        .contents
+          .content-inner
+            .content-wrapper
+              .obj-large-broad
+                .wheel-broad-large
+                  p.broad-title Vòng quay may mắn -  Biển Trong Lành
+                  .broad-content
+                    table#result-table(cellspacing='0', cellpadding='15', data-table-note="Top 20")
+                      tr
+                        th
+                          p.align_c STT
+                        th
+                          p Tên đăng nhập
+                        th
+                          p.align_c Điểm thưởng
+                        th
+                          p.align_r Thời gian
+                      tr.top-user
+                        td
+                          p.align_c 1
+                        td
+                          p Tranlinh
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+                      tr
+                        td
+                          p.align_c 2
+                        td
+                          p huong17
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+                      tr
+                        td
+                          p.align_c 3
+                        td
+                          p letrihai68
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+                      tr
+                        td
+                          p.align_c 4
+                        td
+                          p letrihai68
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+                      tr
+                        td
+                          p.align_c 5
+                        td
+                          p letrihai68
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+                      tr.row_limited
+                        td(colspan="5")
+                          p.align_c ...
+                      tr.current_user
+                        td
+                          p.align_c 22
+                        td
+                          p letrihai68
+                        td
+                          p.align_c 20
+                        td
+                          p.align_r 2015-12-31 15:57:33
+
+                .wiget_2
+                .wiget_1
+              .obj-direction.left
+                img.direction-leg(src='common/img/direction-leg.png' alt='')
+                ul
+                  li
+                    a(href="#wheel-law")
+                      img(src='common/img/direction-broad-04.png' alt='')
+                      p Thể lệ
+                  li
+                    a(href="#wheel-play")
+                      img(src='common/img/direction-broad-03.png' alt='')
+                      p Vòng quay
+
+            .sand-floor
+      .footer
+        .content-inner
+    script(type='text/javascript' src="common/js/jquery-2.2.1.min.js")
+    script(type='text/javascript' src="common/js/jquery-ui.js")
+    script(type='text/javascript' src="common/js/jquery.mousewheel.js")
+    script(type='text/javascript').
+
+        var points_array = [1,30,5,20,1,5,50,1,20,200];
+
+        $(function() {
+            //- $("*:not(.broad-content)").mousewheel(function(event, delta) {
+            //-     this.scrollLeft -= (delta * 100);
+            //-     event.preventDefault();
+            //- });
+
+            $(document).on("click",".user_login",function(){
+              $("#login-form").toggleClass("disable");
+            })
+
+            $(document).on("click",".content_user",function(){
+              $("#user-infomation").toggleClass("disable");
+            })
+
+            $(document).on("click","#back-btn",function(){
+              $(this).closest(".nail-broad").toggleClass("disable");
+            })
+
+            //- Scroll horizontal
+            $('a[href*="#"]:not([href="#"])').click(function(e) {
+              //- e.preventDefault();
+              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html, body').animate({
+                    scrollLeft: target.offset().left
+                  }, 800, 'swing',function(){
+                    if(typeof($(".nail-broad:not(.disable)")[0]) !== "undefined")
+                      {
+                        $(".nail-broad").addClass("disable");
+                      }
+
+                  });
+                }
+              }
+              return false;
+
+            });
+
+            //- Change background function
+            ReDesign_background();
+            function ReDesign_background(){
+              var date = new Date();
+              var hours = date.getHours();
+              var begin_time = 6;
+              var end_time = 18;
+              console.log(hours);
+              if(hours >= begin_time && hours <= end_time)
+                {
+                var rate = (hours - begin_time)/(end_time - begin_time);
+                console.log(rate);
+                var hue_deg = rate * 200;
+                //- console.log(rate * 200);
+                $("#background-wapper #main-background").attr("style","  -webkit-filter: hue-rotate("+hue_deg+"deg) saturate("+ (rate+1) +"); filter: hue-rotate("+hue_deg+"deg) saturate("+ (rate+1) +");")
+                //- $("#wrapper .fish-area").attr("style","  -webkit-filter: hue-rotate("+hue_deg/2+"deg) saturate("+ (rate+1) +"); filter: hue-rotate("+hue_deg/2+"deg) saturate("+ (rate+1) +");")
+                $("#wrapper .leaf-header").attr("style","  -webkit-filter: hue-rotate("+-hue_deg/3+"deg) saturate("+ (rate+1) +"); filter: hue-rotate("+-hue_deg/3+"deg) saturate("+ (rate+1) +");")
+                }
+            }
+            //- Rotate function
+            function get_current_rotate(id){
+              var el = document.getElementById(id);
+              var st = window.getComputedStyle(el, null);
+              var tr = st.getPropertyValue("-webkit-transform") ||
+                       st.getPropertyValue("-moz-transform") ||
+                       st.getPropertyValue("-ms-transform") ||
+                       st.getPropertyValue("-o-transform") ||
+                       st.getPropertyValue("transform") ||
+                       "FAIL";
+
+              // With rotate(30deg)...
+              // matrix(0.866025, 0.5, -0.5, 0.866025, 0px, 0px)
+              //- console.log('Matrix: ' + tr);
+
+              // rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
+              if(tr !== "none")
+                {
+                var values = tr.split('(')[1].split(')')[0].split(',');
+                var a = values[0];
+                var b = values[1];
+                var c = values[2];
+                var d = values[3];
+
+                var scale = Math.sqrt(a*a + b*b);
+
+                //- console.log('Scale: ' + scale);
+
+                // arc sin, convert from radians to degrees, round
+                var sin = b/scale;
+                // next line works for 30deg but not 130deg (returns 50);
+                // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
+                var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+
+                //- console.log('Rotate: ' + angle + 'deg');
+                return angle;
+                }
+              else
+                return 0;
+            };
+
+
+            function getRandomIntInclusive(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            //- function
+
+
+
+            function load_score(){
+            var total_delay;
+            var delay_time = 100;
+                for (i = 0; i < points_array.length; i++){
+                  (function(i){
+                    setTimeout(function(){
+                      //- console.log(i);
+                      var point_value = document.createElement("span");  // Create with DOM
+                      point_value.setAttribute("data-point-value", points_array[i]);
+                      point_value.innerHTML = points_array[i];
+                      $(".points-list ul li:nth-child(" + (i + 1)+ ")").append(point_value).attr("data-point-value", points_array[i]);
+                    }, 100 * i + delay_time);
+                  }(i));
+                  total_delay = 100 * i + delay_time;
+                }
+                setTimeout(function(){
+                  $("#rotate-wheel").addClass("auto-wheel");
+                   $("#wheel-nail").addClass("lock");
+                  $(document).on('click',"#rotate-wheel",function(){
+                    wheel_action(200);
+                  })
+                },total_delay + delay_time + 100);
+            }
+            load_score();
+
+            function wheel_action(point_value){
+                var elem = $("#rotate-wheel").stop(true,false).removeClass("auto-wheel");
+                var current_deg = get_current_rotate("rotate-wheel");
+                $(document).off('click',"#rotate-wheel");
+
+                //- setting variable
+                var point_peace = 0;
+                point_peace = getRandomIntInclusive(0, points_array.length);
+                while(point_value !== points_array[point_peace]){
+                  //- console.log(point_value);
+                  point_peace = getRandomIntInclusive(0, points_array.length);
+                }
+                //- console.log(point_peace);
+                var loop = getRandomIntInclusive(4, 6);
+                var random_pointer = getRandomIntInclusive(-16,16);
+                var rotate_duration = getRandomIntInclusive(10000, 12000);
+                var deg_rotate = -(loop * 360 + (point_peace) * 36) + random_pointer;
+
+                $(window).bind('beforeunload', function(e){
+                  if(out)
+                      {return "Do you really want to leave this page now?"}
+                });
+
+               //- Ending setting variable
+
+                $({deg: current_deg}).animate({deg: deg_rotate}, {
+                    duration: rotate_duration,
+                    easing: "easeOutQuart",
+                    specialEasing: "easeOutQuart",
+                    step: function(now){
+                        elem.css({
+                            '-webkit-transform': "rotate(" + now + "deg)",
+                            '-moz-transform': "rotate(" + now + "deg)",
+                            '-ms-transform': "rotate(" + now + "deg)",
+                            '-o-transform': "rotate(" + now + "deg)",
+                            'transform': "rotate(" + now + "deg)"
+                        });
+                    },
+                    done: function(){
+                      $(document).on('click',"#rotate-wheel",function(){
+                        wheel_action(200);
+                      });
+                      //- console.log(point_peace);
+                      $(".point-result").attr("data-score", points_array[point_peace]);
+                      //- console.log(get_current_rotate("rotate-wheel"));
+                    },
+                });
+            }
+
+
+            var max_first_top = $(".sand-floor").offset().top;
+            var min_first_top = $("#beach-background").offset().top;
+
+            var fish = function generate_fish(){
+              var pos_horizontal = getRandomIntInclusive(0, 300);
+              var pos_vertical = getRandomIntInclusive(min_first_top, max_first_top);
+              var fish_scale = (pos_vertical / (min_first_top/1.5)) - 1;
+              var fish_scale_css;
+              switch(getRandomIntInclusive(0, 1))
+                {
+                case 1:
+                  fish_scale_css = "transform: scale("+ -fish_scale +","+ fish_scale +");-ms-transform: scale("+ -fish_scale +","+ fish_scale +");-webkit-transform: scale("+ -fish_scale +","+ fish_scale +");-moz-transform: scale("+ -fish_scale +","+ fish_scale +")";
+                  break;
+                default:
+                  fish_scale_css = "transform: scale("+ fish_scale +");-ms-transform: scale("+ fish_scale +");-webkit-transform: scale("+ fish_scale +");-moz-transform: scale("+ fish_scale +");";
+                  break;
+                }
+              var type_fish = getRandomIntInclusive(1, 9);
+
+              //- console.log(fish_scale);
+              var fish = document.createElement('div');
+              fish.setAttribute("class","fish-jump");
+              fish.setAttribute("style", "left: " + pos_horizontal + "vw; top: " + pos_vertical + "px;" + fish_scale_css);
+              //- fish.setAttribute("style", "top: " + pos_vertical + "vw");
+              var fish_img = document.createElement('img');
+              fish_img.setAttribute("class", "fish_object fish_jump_animation");
+              fish_img.setAttribute("src", "common/img/fish-0"+type_fish+".png");
+              fish_img.setAttribute("alt", "Fish");
+              fish_img.setAttribute("height", "20");
+              fish.appendChild(fish_img);
+
+              return fish;
+            };
+
+            //- console.log(fish());
+            generate_fishes(100);
+
+            function generate_fishes(fish_number){
+              var delay_time = getRandomIntInclusive(500, 1200);
+              for (i=0; i < fish_number; i++){
+                delay_time = getRandomIntInclusive(0, 1000);
+                (function(i){
+                  //- console.log(i);
+                  setTimeout(function(){
+                    //- console.log(i);
+                    $("#wrapper .fish-area").prepend(fish());
+
+                  }, i * delay_time);
+                }(i))
+              }
+
+            };
+        });
