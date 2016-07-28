@@ -1,0 +1,887 @@
+// @function rotate($deg){
+
+// }
+
+.ds_flex
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+
+@mixin pos_center($x_percent, $y_percent)
+    position: absolute
+    left: $x_percent
+    top: $y_percent
+    transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+
+.pos_center
+    @include pos_center(50%, 50%)
+
+@mixin inner_text_shadow($color)
+    text-shadow: shadow_value($color,4)
+
+@mixin inner_box_shadow($color)
+    -webkit-box-shadow: shadow_value($color,4)
+    -moz-box-shadow: shadow_value($color,4)
+    box-shadow: shadow_value($color,4)
+
+@function shadow_value($color,$times)
+    $string_value: ''
+    @for $i from 0 to $times
+        $string_value: $string_value + $i+'px' $i+'px' 0px $color +', '
+    // $string_value: $string_value + ($times+1)+'px ' + ($times+1)+'px ' + $times+'px' $color +', '
+    @return  $string_value + ($times+1)+'px ' + ($times+1)+'px ' + ($times*2)+'px' $color
+
+.inner_text_shadow
+    @include inner_text_shadow(#4e1e06)
+
+.inner_box_shadow
+    @include inner_box_shadow(#4e1e06)
+
+.shadowed_png
+    -webkit-filter: drop-shadow(2px 4px 0px rgba(78,30,6,1))
+    filter: url(#drop-shadow)
+    -webkit-filter: drop-shadow(2px 4px 0px #4e1e06)
+    filter: drop-shadow(2px 4px 0px #4e1e06)
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=4, Color='#4e1e06')"
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=4, Color='#4e1e06')"
+
+@mixin wheel-rotate-point($number)
+    $deg-calc: ($number - 1) * 36
+    // $margin-top: -120px
+    // margin-top: $margin-top
+    -ms-transform: rotate(unquote($deg-calc + 'deg')) /* IE 9 */
+    -webkit-transform: rotate(unquote($deg-calc  + 'deg'))  /* Safari */
+    transform: rotate(unquote($deg-calc + 'deg'))
+    // @extend .inner_text_shadow
+
+
+@mixin transform-origin($x, $y)
+    -webkit-transform-origin: $x $y
+    -moz-transform-origin: $x $y
+    -o-transform-origin: $x $y
+    -ms-transform-origin: $x $y
+    transform-origin: $x $y
+body
+    overflow: hidden
+    font-family: 'Lobster', cursive
+    color: #494949
+#wrapper
+    position: relative
+    width: 300vw
+    height: 100vh
+    min-width: calc(3 * 1300px)
+
+#background-wapper
+    position: fixed
+    width: 100vw
+    min-width: 1300px
+    height: 100vh
+    background:
+        image: url(../img/sky-background.jpg)
+        repeat: no-repeat
+        size: cover
+        position: center
+    #main-background
+        max-height: 100vh
+        min-width:  100vw
+        @extend .pos_center
+        z-index: 0
+    #beach-background
+        height: 50%
+        width: 100%
+        position: fixed
+        bottom: 0
+        left: 0
+        z-index: 0
+        -webkit-filter: opacity(0.6)
+        filter: opacity(0.6)
+
+#login-form, #user-infomation
+    position: fixed
+    z-index: 12
+    height: 400px
+    width: 670px
+    left: calc(50vw - 335px)
+    line-height: 95px
+    color: #fff
+    font-size: 1.8em
+    top: 250px
+    -webkit-transition: top 0.5s cubic-bezier(0.5,-0.4, 0.1, 1.4)
+    -o-transition: top 0.5s cubic-bezier(0.5,-0.4, 0.1, 1.4)
+    transition: top 0.5s cubic-bezier(0.5,-0.4, 0.1, 1.4)
+
+    // background:
+    //     image: url(../img/broad-login.png)
+    //     repeat: no-repeat
+    //     size: contain
+    //     position: center
+    .animation
+        height: 400px
+    &:not(.disable)
+        .animation
+            @extend .swing-animation-2deg
+    .broad-background
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+    .form-title
+        text-align: center
+        span
+            font-size: 1.5em
+            text-align: center
+            @extend .inner_text_shadow
+        sub
+            a
+                margin-left: 20px
+                color: #4e1e06
+                text-decoration: none
+            &:hover
+                text-decoration: none
+    label[for], .label
+        display: inline-block
+        vertical-align: middle
+        min-width: 10%
+        margin: 0 5% 0 10%
+        color: #4e1e06
+        &:after
+            // content: ": "
+    // input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    //     background-color: transparent
+    //     background-image: none
+    //     color: rgb(0, 0, 0)
+
+    p.label[data-userpoint]
+        display: block
+        text-align: center
+        &:after
+            text-align: center
+            content: " " attr(data-userpoint)
+            @extend .inner_text_shadow
+            color: #fff
+            font-size: 1.5em
+
+
+
+
+    input
+        display: inline-block
+        vertical-align: middle
+        background-color: transparent !important
+        -webkit-border: none
+        -moz-border: none
+        -ms-border: none
+        -o-border: none
+        border: none
+        -webkit-border-bottom: solid #fff 1px
+        -moz-border-bottom: solid #fff 1px
+        -ms-border-bottom: solid #fff 1px
+        -o-border-bottom: solid #fff 1px
+        border-bottom: solid #fff 1px
+        font-size: 1.2em
+        max-width: 50%
+        font-family: "Lobster", cursive
+        color: #fff
+        -webkit-text-fill-color: #fff !important
+        padding: 0 10px
+        @extend .inner_text_shadow
+        &:focus
+            -webkit-outline: none
+            -moz-outline: none
+            -ms-outline: none
+            -o-outline: none
+            outline: none
+            -webkit-border-bottom: solid #fff 2px
+            -moz-border-bottom: solid #fff 2px
+            -ms-border-bottom: solid #fff 2px
+            -o-border-bottom: solid #fff 2px
+            border-bottom: solid #fff 2px
+        &:-webkit-autofill
+            // -webkit-box-shadow: 0 0 0px 0px white inset
+            background-color: red !important
+            background-image: none !important
+            color: #fff !important
+            -webkit-box-shadow: 0 0 0px 1000px #d59133 inset
+        &:-webkit-input-placeholder, &::-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+            color: red !important
+    #next-btn, #back-btn
+        text-decoration: none
+        display: inline-block
+        vertical-align: middle
+        margin: 0 auto
+        -webkit-border: none
+        -moz-border: none
+        -ms-border: none
+        -o-border: none
+        border: none
+        height: 55px
+        width: 119px
+        cursor: pointer
+        background:
+            image: url(../img/login_btn.png)
+            repeat: no-repeat
+            size: contain
+            position: center
+        &:hover
+            background:
+                image: url(../img/login_btn-on.png)
+    #back-btn
+        background:
+            image: url(../img/logout_btn.png)
+        // margin-right: 150px
+        &:hover
+            background:
+                image: url(../img/logout_btn-on.png)
+    #message-login
+        display: inline-block
+        max-width: 40%
+        line-height: 1.1
+        vertical-align: middle
+        margin: 0 5%
+    .nav-direction
+        text-align: center
+        a
+            color: #e2503a
+            font-size: 1.2em
+            @extend .inner_text_shadow
+            + a
+                margin-left: 40px
+            &:hover
+                text-decoration: none
+                color: rgb(125, 145, 25)
+    .function-form
+        text-align: center
+    &.disable
+        top: -100%
+    &:before
+        content: ""
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: transparent
+        -webkit-transition: background-color 0.2s ease
+        -o-transition: background-color 0.2s ease
+        transition: background-color 0.2s ease
+        pointer-events: none
+    &:not(.disable):before
+        pointer-events: all
+        content: ""
+        background-color: rgba(0, 0, 0, 0.8)
+        z-index: -2
+.nail-thick
+    &:after, &:before
+        position: absolute
+        bottom: 280px
+    &:before
+        content: url(../img/broad-login-nleft.png)
+        left: 40px
+    &:after
+        content: url(../img/broad-login-nright.png)
+        right: 40px
+
+.header
+    // background: red
+    min-height: 310px
+    // min-width: 100%
+    margin: 0 auto
+    // background:
+    //     image: url(../img/header-leaf.png)
+    //     repeat: no-repeat
+    //     position: center top
+    text-align: center
+    // @include pos_center(50%, 0%)
+    .broad-name
+        position: absolute
+        // display: inline-block
+        // position: relative
+        left: calc(50% - 193px)
+        top: 140px
+        width: 386px
+        height: 178px
+
+        @extend .swing-animation-2deg
+        &:before
+            @extend .inner_text_shadow
+            content: attr(data-broad-name)
+            position: absolute
+            // width: 80%
+            // margin-left: 10%
+            top: 50px
+            left: 5%
+            right: 5%
+            font-size: 60px
+            color: white
+        .nail-thick
+            position: absolute
+            bottom: 0px
+            left: 0
+            right: 0
+            &:before, &:after
+                -webkit-transform: scale(0.5)
+                -moz-transform: scale(0.5)
+                -ms-transform: scale(0.5)
+                -o-transform: scale(0.5)
+                transform: scale(0.5)
+                bottom: 10px
+            &:before
+                left: 10px
+            &:after
+                right: 10px
+    .leaf-header
+        position: absolute
+        @extend .swing-animation-2deg
+        [class^='leaf-']
+            position: absolute
+            top: -90px
+        .flower-leaf
+            @extend .pos_center
+        .leaf-01
+            right: 300px
+            @extend .swing-animation-5deg
+        .leaf-02
+            right: 250px
+            @extend .swing-animation-3deg
+        .leaf-03
+            right: 00px
+        .leaf-04
+            left: 00px
+            @extend .swing-animation-1deg
+        .leaf-05
+            left: 150px
+        .leaf-06
+            left: 250px
+            @extend .swing-animation-3deg
+        .leaf-07
+            left: 400px
+            @extend .swing-animation-4deg
+
+
+#wheel-play, #wheel-law, #wheel-result
+    @extend .ds_flex
+    flex-flow: column wrap
+    -webkit-flex-flow: column wrap
+
+    height: 100vh
+    position: relative
+    float: left
+    min-width: 1300px
+    width: 100vw
+    z-index: 1
+
+// #wheel-play, #wheel-law
+//     display: none
+.contents
+
+    @extend .ds_flex
+    flex-flow: column wrap
+    -webkit-flex-flow: column wrap
+    margin-top: 20px
+    // background: blue
+    flex: 1
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+    background:
+        image: url(../img/floor-sand.png)
+        repeat: no-repeat
+        size: 100% 260px
+        position: center bottom
+    .content-inner
+        flex: 1
+        text-align: center
+    .content-wrapper
+        min-width: 1300px
+        margin: 0 auto
+        text-align: center
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+
+    .obj-wheel
+        position: relative
+        display: inline-block
+        #metal-wheel, #metal-wheel-center, #metal-wheel-center-large
+            width: 85%
+            height: 85%
+            -webkit-border-radius: 50%
+            -moz-border-radius: 50%
+            -ms-border-radius: 50%
+            -o-border-radius: 50%
+            border-radius: 50%
+            @extend .pos_center
+            pointer-events: none
+            border: 8px solid #4E1E06
+            &:before
+                content: ''
+                @extend .pos_center
+                width: 80%
+                height: 80%
+                border: 5px solid #484137
+                -webkit-border-radius: 50%
+                -moz-border-radius: 50%
+                -ms-border-radius: 50%
+                -o-border-radius: 50%
+                border-radius: 50%
+                z-index: 10
+        #metal-wheel-center
+            width: 6%
+            height: 6%
+            z-index: 99
+            pointer-events: none
+            background-color: #4E1E06
+            @extend .inner_box_shadow
+            &:before
+                // content: none
+                width: 500%
+                height: 500%
+                -webkit-box-shadow: shadow_value(#635B57, 1)
+                box-shadow: shadow_value(#635B57, 1)
+                border: 5px solid #D2A288
+
+        #metal-wheel-center-large
+            width: 90%
+            height: 90%
+            -webkit-box-shadow: shadow_value(#865014, 2)
+            box-shadow: shadow_value(#865014, 2)
+            border: 3px solid #ECD6CA
+            z-index: 3
+            &:before
+                content: none
+
+        #rotate-wheel
+            width: 430px
+            height: 430px
+            // @extend .pos_center
+            -webkit-border-radius: 50%
+            -moz-border-radius: 50%
+            -ms-border-radius: 50%
+            -o-border-radius: 50%
+            border-radius: 50%
+            cursor: pointer
+            .points-list
+                // position: absolute
+                // top: calc(50% - 10px)
+                // left: 15%
+                // right: 15%
+                z-index: 2
+                text-align: right
+                @extend .pos_center
+                width: 430px
+                height: 430px
+                ul
+                    // @extend .pos_center
+                    // position: absolute
+                    width: 430px
+                    height: 430px
+                    li
+                        font-size: 30px
+                        color: white
+                        margin-top: calc(50% - 60px)
+                        // margin-right: -20px
+                        // margin-right: 10px
+                        width: 50%
+                        height: 120px
+                        right: 0
+                        position: absolute
+
+                        @include transform-origin(0%,50%)
+
+
+                        &:not([data-point-value])
+                            img.wheel-circle
+                                padding-left: 20px
+                        &:nth-child(1)
+                            @include wheel-rotate-point(1)
+                        &:nth-child(2)
+                            @include wheel-rotate-point(2)
+                        &:nth-child(3)
+                            @include wheel-rotate-point(3)
+                        &:nth-child(4)
+                            @include wheel-rotate-point(4)
+                        &:nth-child(5)
+                            @include wheel-rotate-point(5)
+                        &:nth-child(6)
+                            @include wheel-rotate-point(6)
+                        &:nth-child(7)
+                            @include wheel-rotate-point(7)
+                        &:nth-child(8)
+                            @include wheel-rotate-point(8)
+                        &:nth-child(9)
+                            @include wheel-rotate-point(9)
+                        &:nth-child(10)
+                            @include wheel-rotate-point(10)
+
+                        img.wheel-flower
+                            position: absolute
+                            z-index: 9
+                            @include pos_center(80%, 5%)
+                        img.wheel-circle
+                            -moz-transition: padding-left .1s ease
+                            -webkit-transition: padding-left .1s ease
+                            -o-transition: padding-left .1s ease
+                            transition: padding-left .1s ease
+                            z-index: 0
+                            @include pos_center(52%, 50%)
+                        span
+                            @include pos_center(60%, 50%)
+
+
+        #wheel-pointer
+            z-index: 2
+            position: absolute
+            right: -120px
+            top: -20px
+
+        #wheel-nail
+            z-index: 2
+            position: absolute
+            top: -21px
+            left: calc(50% - 21px)
+            // @extend .shadowed_png
+            pointer-events: none
+            &.lock
+                -webkit-transform: rotate(-45deg)
+                -moz-transform: rotate(-45deg)
+                -ms-transform: rotate(-45deg)
+                -o-transform: rotate(-45deg)
+                transform: rotate(-45deg)
+
+                -moz-transition: transform 0.2s ease
+                -webkit-transition: transform 0.2s ease
+                -o-transition: transform 0.2s ease
+                transition: transform 0.2s ease
+        #wheel-surfing
+            position: absolute
+            bottom: 150px
+            left: -150px
+        #wood-connection
+            position: absolute
+            bottom: 385px
+        .wheel-content
+            position: absolute
+            bottom: 180px
+            left: -94px
+
+            z-index: 1
+            @extend .shadowed_png
+
+    .obj-broad
+        position: relative
+        display: inline-block
+        margin-left: 240px
+        #broad-content, #user_info
+            position: absolute
+            left: -60px
+            bottom: 220px
+            text-align: center
+            .broad-paper
+                position: absolute
+                font-size: 2em
+                display: block
+                top: 5%
+                left: 5%
+                right: 5%
+                bottom: 5%
+                padding: 5% 5% 10% 10%
+                background:
+                    image: url(../img/broad-paper.png)
+                    repeat: no-repeat
+                    size: 100% 100%
+                    position: center
+                .point-result
+                    display: block
+                    &[data-score]
+                        &:after
+                            content: attr(data-score)
+                            font-size: 100px
+                            @extend .inner_text_shadow
+                            color: #FF545D
+                            display: block
+        #user_info
+            top: 25px
+            bottom: auto
+            // width: 50%
+            // @inlcude pos_center(30)
+            .content_user, a.user_login
+                @include pos_center(50%, 40%)
+                @extend .inner_text_shadow
+                color: white
+                font-size: 1.5em
+            a.user_login:hover
+                text-decoration: none
+            .content_user
+                &[data-userpoint]
+                    &:after
+                        content: attr(data-userpoint)
+                        margin-left: 40px
+                        border-left: solid 1px white
+                        padding-left: 40px
+                        font-size: 1.2em
+                &:hover
+                    text-decoration: none
+                    // &:before
+                    //     content: ": "
+        .wiget_3
+            bottom: 5vw
+            right: -200px
+
+    .obj-large-broad
+        display: block
+        margin: 0 auto
+        margin-bottom: 1vw
+        width: 1285px
+        height: 606px
+        background:
+            image: url(../img/broad-large.png)
+            repeat: no-repeat
+            size: contain
+            position: center bottom
+        position: relative
+
+        .wheel-broad-large
+            position: absolute
+            top: 10%
+            bottom: 10%
+            right: 10%
+            left: 11%
+            background:
+                image: url(../img/broad-paper.png)
+                repeat: no-repeat
+                size: 100% 100%
+                position: center
+            z-index: 11
+            -webkit-box-sizing: border-box
+            -moz-box-sizing: border-box
+            box-sizing: border-box
+            padding: 3% 5% 4% 4%
+
+            @extend .ds_flex
+            flex-flow: column wrap
+            -webkit-flex-flow: column wrap
+            .broad-title
+                font-size: 36px
+                margin-bottom: 10px
+            .broad-content
+                font-size: 1.2em
+                flex: 1
+                text-align: justify
+                overflow: auto
+                padding-right: 2%
+                line-height: 1.8
+                // overflow-y: scroll
+
+            // -----------Result-page
+            #result-table
+                width: 100%
+                -webkit-border-radius: 5px
+                -moz-border-radius: 5px
+                -ms-border-radius: 5px
+                -o-border-radius: 5px
+                border-radius: 5px
+                overflow: hidden
+                border: solid 1px rgba(238,204,147,1)
+                // position: relative
+
+                tr
+                    &:nth-child(1)
+                        font-size: 1.3em
+                        background:
+                            image: url(../img/table-header-textture.png)
+                            repeat: repeat
+                            // size: contain
+                            position: center
+                        @include inner_text_shadow(#494949)
+                        color: #fff
+                    &:nth-child(odd)
+                        background-color: rgba(238,204,147,0.2)
+                    &.row_limited
+                        line-height: 0
+                    &.current_user
+                        background-color: rgba(255, 0, 0, 0.2) !important
+                    &.top-user
+                        td:first-child
+                            position: relative
+                            &:before
+                                content: url(../img/flower-01.png)
+                                // position: absolute
+                                left: 5px
+                                display: inline-block
+                                vertical-align: middle
+                            p
+                                margin-left: 20px
+                                font-size: 1.2em
+                                display: inline-block
+                                vertical-align: middle
+                                font-weight: bold
+                &:before
+                    content: attr(data-table-note)
+                    top: 60px
+                    left: 80px
+                    position: absolute
+
+
+    .sand-floor
+        height: 200px
+        // width: 100vw
+        position: absolute
+        z-index: 10
+        bottom: 0
+        left: 0
+        right: 0
+        background:
+            image: url(../img/floor-sand-font.png)
+            repeat: no-repeat
+            size: 100%
+            position: center bottom
+        .wiget_1
+            left: 50%
+
+#wheel-law
+    .wiget_2
+        bottom: 20px
+        left: 5px
+        z-index: 11
+    .wiget_4
+        bottom: 50px
+        right: 65px
+        z-index: 11
+
+#wheel-result
+    .wiget_1
+        bottom: 30px
+        left: 0px
+        z-index: 11
+    .wiget_2
+        bottom: 50px
+        right: 5px
+        z-index: 11
+
+[class^='wiget_']
+    position: absolute
+    pointer-events: none
+
+.wiget_1
+    width: 272px
+    height: 143px
+    background:
+        image: url(../img/wiget_1.png)
+        repeat: no-repeat
+        position: center
+
+.wiget_2
+    width: 238px
+    height: 183px
+    background:
+        image: url(../img/wiget_2.png)
+        repeat: no-repeat
+        position: center
+
+.wiget_3
+    width: 136px
+    height: 153px
+    background:
+        image: url(../img/wiget_3.png)
+        repeat: no-repeat
+        position: center
+
+.wiget_4
+    width: 204px
+    height: 91px
+    background:
+        image: url(../img/wiget_4.png)
+        repeat: no-repeat
+        position: center
+
+
+.obj-direction
+    position: absolute
+    bottom: 0
+    z-index: 9
+    ul
+        position: absolute
+        top: 30px
+        li
+            position: relative
+            margin-bottom: 20px
+            p
+                @extend .inner_text_shadow
+                font-size: 1.6em
+                color: white
+                width: 100%
+
+    &.left
+        left: 100px
+        ul
+            right: -70px
+            li
+                p
+                    @include pos_center(55%, 40%)
+    &.right
+        right: 100px
+        ul
+            left: -70px
+            li
+                p
+                    @include pos_center(45%, 40%)
+
+        // ---------------Animation rotate
+
+.fish-area
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+
+.fish-jump
+    position: absolute
+    z-index: 0
+
+.plane-fly-01
+    position: absolute
+    left: -500px
+    top: 20%
+    // .machine-plane
+    .flag-plane
+        position: absolute
+        right: 100%
+        margin-top: 40px
+        margin-right: -5px
+
+// ----------Config scroll page
+// Let's get this party started
+
+::-webkit-scrollbar
+    width: 8px
+
+// Track
+
+::-webkit-scrollbar-track
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px
+    border-radius: 10px
+    width: 0
+    //display:none;
+    background: transparent
+
+// Handle
+
+::-webkit-scrollbar-thumb
+    -webkit-border-radius: 10px
+    border-radius: 10px
+    background:
+        image: url(../img/table-header-textture.png)
+        repeat: repeat
+        // size: contain
+        position: center
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    &:window-inactive
+        /*background: rgba(255,0,0,0.4);
